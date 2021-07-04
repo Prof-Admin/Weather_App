@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Text(
-                  temp != null ? temp.toString() + "\u00B0" "C" : "Loading",
+                  temp != null ? temp.toString() + "\u00B0" "K" : "Loading",
                   style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.w600),
                 ),
                 Padding(
