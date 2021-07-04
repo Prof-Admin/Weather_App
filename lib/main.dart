@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   var windspeed;
 
   Future getWeather () async {
-    http.Response response = await http.get(https://api.openweathermap.org/data/2.5/weather?q=Epe&appid=3ae08ae077987cfe369063344ead9711);
+    http.Response response = await http.get(Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=Epe&units=metric&appid=3ae08ae077987cfe369063344ead9711"));
     var results = jsonDecode(response.body);
     setState(() {
       this.temp = results['main']['temp'];
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.sun),
                       title: Text("Humidity"),
-                      trailing: Text(humidity != null ? humidity.toString() : "Loading"),
+                      trailing: Text(humidity != null ? humidity.toString() + "%" : "Loading"),
                     ),
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.wind),
