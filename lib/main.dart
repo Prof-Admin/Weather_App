@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   var windspeed;
 
   Future getWeather () async {
-    http.Response response = await http.get(Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=Epe&appid=3ae08ae077987cfe369063344ead9711"));
+    http.Response response = await http.get(Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=Epe&units=metric&appid=3ae08ae077987cfe369063344ead9711"));
     var results = jsonDecode(response.body);
     setState(() {
       this.temp = results['main']['temp'];
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Text(
-                  temp != null ? temp.toString() + "\u00B0" "K" : "Loading",
+                  temp != null ? temp.toString() + "\u00B0" "C" : "Loading",
                   style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.w600),
                 ),
                 Padding(
@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.thermometerHalf),
                       title: Text("Temperature"),
-                      trailing: Text(temp != null ? temp.toString() + "\u00B0" "K" : "Loading"),
+                      trailing: Text(temp != null ? temp.toString() + "\u00B0" "C" : "Loading"),
                     ),
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.cloud),
