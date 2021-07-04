@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.thermometerHalf),
                       title: Text("Temperature"),
-                      trailing: Text(temp != null ? temp.toString() + "\u00B0" "C" : "Loading"),
+                      trailing: Text(temp != null ? temp.toString() + "\u00B0" "K" : "Loading"),
                     ),
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.cloud),
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.sun),
                       title: Text("Humidity"),
-                      trailing: Text(humidity != null ? humidity.toString() : "Loading"),
+                      trailing: Text(humidity != null ? humidity.toString() + "%" : "Loading"),
                     ),
                     ListTile(
                       leading: FaIcon(FontAwesomeIcons.wind),
